@@ -1,23 +1,20 @@
 import { client, DEFAULT_MODEL } from "./lib/openai.js";
 import { getWeatherTool, getWeather } from "./tools/weather.js";
-import {
-  getNearbyYoubikeTool,
-  getNearbyYoubike,
-} from "./tools/youbike.js";
+import { currentTimeTool, get_current_time } from "./tools/current_time.js";
 import { spinner } from "./utils/spinner.js";
 
 const AVAILABLE_TOOLS = {
   get_weather: getWeather,
-  get_nearby_youbike: getNearbyYoubike,
+  get_current_time: currentTimeTool,
 };
 
-const tools = [getWeatherTool, getNearbyYoubikeTool];
+const tools = [getWeatherTool, currentTimeTool];
 
 const messages = [
   {
     role: "user",
     content:
-      "我在台北車站附近，請問現在天氣如何？順便告訴我附近還有沒有 YouBike 可以租？",
+      "請問現在幾點?台北天氣好嗎？",
   },
 ];
 
