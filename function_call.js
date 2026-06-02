@@ -11,7 +11,7 @@ const AVAILABLE_TOOLS = {
 
 const tools = [getWeatherTool, getCalculatorTool];
 
-const messages = [{ role: "user", content: "請問4*6是多少?" }];
+const messages = [{ role: "user", content: "請問4-3*6-3是多少?" }];
 
 const askingSpinner = spinner("思考中...").start();
 
