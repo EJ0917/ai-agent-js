@@ -6,7 +6,7 @@
 現在是 2026/6/2 下午 3:22:32（台灣時間）。需要我以 24 小時制顯示或換算到其他時區嗎？
 
 
-##台北天氣如何?
+## 台北天氣如何?
 @EJ0917 ➜ /workspaces/ai-agent-js (HW4) $ node function_call.js 
 
 [呼叫 tool] get_weather({"city":"Taipei"})
