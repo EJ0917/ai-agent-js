@@ -1,17 +1,18 @@
 import { client, DEFAULT_MODEL } from "./lib/openai.js";
 import { getWeatherTool, getWeather } from "./tools/weather.js";
-import { getCalculatorTool, calculate } from "./tools/calculator.js";
+import { getCalculatorTool, getCalculate } from "./tools/calculator.js";
 
 import { spinner } from "./utils/spinner.js";
 
 const AVAILABLE_TOOLS = {
   get_weather: getWeather,
-  get_calculate: calculate
+  calculate: getCalculate,
+  
 };
 
 const tools = [getWeatherTool, getCalculatorTool];
 
-const messages = [{ role: "user", content: "請問4-3*6-3是多少?" }];
+const messages = [{ role: "user", content: "請使用工具計算 3*6-3" }];
 
 const askingSpinner = spinner("思考中...").start();
 

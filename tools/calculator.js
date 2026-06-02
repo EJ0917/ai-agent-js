@@ -1,3 +1,5 @@
+import { evaluate } from "mathjs";
+
 export const getCalculatorTool = {
   type: "function",
   function: {
@@ -16,6 +18,6 @@ export const getCalculatorTool = {
   },
 };
 
-export async function calculate({ expression }) {
-    return eval(expression)
+export async function getCalculate({ expression }) {
+  return evaluate(expression)
 }
