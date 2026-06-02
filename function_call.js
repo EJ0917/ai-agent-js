@@ -3,18 +3,15 @@ import { spinner } from "./utils/spinner.js";
 import { toOpenAITool } from "./utils/func-tool.js";
 import * as allTools from "./tools/index.js";
 
-const AVAILABLE_TOOLS = {
-  get_weather: getWeather,
-  get_current_time: currentTimeTool,
-};
-
-const tools = [getWeatherTool, currentTimeTool];
+const toolList = Object.values(allTools);
+const tools = toolList.map(toOpenAITool);
+const AVAILABLE_TOOLS = Object.fromEntries(toolList.map((t) => [t.name, t.fn]));
 
 const messages = [
   {
     role: "user",
     content:
-      "請問現在幾點?台北天氣好嗎？",
+      "現在幾點？台中天氣如何?",
   },
 ];
 
