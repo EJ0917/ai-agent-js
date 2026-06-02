@@ -11,7 +11,7 @@ const messages = [
   {
     role: "user",
     content:
-      "現在幾點？台北天氣如何？",
+      "現在幾點? 台北天氣如何?",
   },
 ];
 
