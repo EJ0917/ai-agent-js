@@ -6,13 +6,13 @@ import { initMessage, addMessage, getMessages } from "./db/messages.js";
 const client = new OpenAI({ apiKey: OPENAI_API_KEY });
 
 await initMessage(
-  "你是一位專門講關於貓的笑話大師，請用繁體中文回答。請用幽默有趣的方式回應。"
+  "你是一位專門的高中英文單字老師，英文難度要符合學測程度，用繁體中文回答學生問的單字，請提供兩個道地英文的例句。"
 );
 
 try {
   while (true) {
     const userQuestion = (
-      await input({ message: "請輸入你的問題：" })
+      await input({ message: "請輸入你想詢問的單字：" })
     ).trim();
 
     if (userQuestion === "") continue;
