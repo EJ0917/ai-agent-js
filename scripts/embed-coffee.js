@@ -8,13 +8,12 @@ import {
   EMBEDDING_MODEL,
 } from "../lib/qdrant_coffee.js";
 
-const CSV_PATH = "data/hw3_file2.csv";
+const CSV_PATH = "data/hw3_file_eng.csv";
 const BATCH_SIZE = 1;
 
 function rowToText(row) {
   return [
-    // row.name,
-    row.eng,
+    row.name,
     row.desc,
   ]
     .filter(Boolean)
@@ -57,8 +56,7 @@ async function main() {
       id: i + idx,
       vector: vectors[idx],
       payload: {
-        // name: row.name,
-        eng: row.eng,
+        name: row.name,
         desc: row.desc,
       },
     }));
